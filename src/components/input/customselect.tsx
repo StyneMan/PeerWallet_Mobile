@@ -12,7 +12,7 @@ import {HelperText} from 'react-native-paper';
 // import appConstants from '../../utils/constants/constants';
 
 interface CustomSelectProps {
-  open?: boolean;
+  name?: string;
   setOpen?: any;
   value?: string;
   items?: any;
@@ -28,13 +28,8 @@ export default function CustomSelect({
   items,
   hasError,
   error,
+  name = '',
 }: CustomSelectProps) {
-  // const [clicked, setClicked] = React.useState(false);
-  // const containerStyle = {backgroundColor: 'white', padding: 20};
-  // const [data, setData] = React.useState(countries);
-
-  // const countries = ['Egypt', 'Canada', 'Australia', 'Ireland'];
-
   return (
     <View>
       <SelectDropdown
@@ -42,7 +37,11 @@ export default function CustomSelect({
         searchPlaceHolder={placeholder}
         onSelect={(selectedItem, index) => {
           console.log(selectedItem, index);
-          setValue(selectedItem);
+          if (name) {
+            setValue(name, selectedItem);
+          } else {
+            setValue(selectedItem);
+          }
         }}
         searchPlaceHolderColor="grey"
         buttonTextAfterSelection={(selectedItem, index) => {

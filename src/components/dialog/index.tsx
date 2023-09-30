@@ -5,6 +5,7 @@ import {Body1, Text2} from '../text';
 import PrimaryButton from '../button/primarybutton';
 // import {PaperProvider, Portal} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
+import LinkButton from '../button/linkbutton';
 
 type DialogProps = {
   open: boolean;
@@ -13,10 +14,11 @@ type DialogProps = {
   description: string;
   action: any;
   buttonText: string;
+  route: string;
 };
 
 const SuccessDialog = (item: DialogProps) => {
-  const {buttonText, description, open, setOpen, title, action} = item;
+  const {buttonText, description, open, setOpen, title, route} = item;
   const navigation = useNavigation();
   return (
     <Modal
@@ -40,12 +42,56 @@ const SuccessDialog = (item: DialogProps) => {
             <PrimaryButton
               onPress={() => {
                 setOpen(false);
-                navigation.navigate('Login');
-                // setTimeout(() => {
+                navigation.navigate(`${route}`);
+                // setTimeout(() =>
                 //   action;
                 // }, 1000);
               }}
               buttonText={buttonText}
+            />
+          </View>
+        </View>
+      </View>
+    </Modal>
+  );
+};
+
+export const ActionDialog = (item: DialogProps) => {
+  const {buttonText, description, open, setOpen, title, route} = item;
+  const navigation = useNavigation();
+  return (
+    <Modal
+      visible={open}
+      animationType="slide"
+      onRequestClose={() => setOpen(false)}
+      transparent={true}>
+      <View style={styles.centeredView}>
+        <View style={styles.container}>
+          <Image
+            source={require('../../assets/images/succesful_trans.png')}
+            resizeMode="contain"
+            style={styles.image}
+          />
+          <View style={styles.spacer} />
+          <Text2 text={title} color={appConstants.color.successColor} />
+          <View style={styles.spacer} />
+          <Body1 text={description} />
+          <View style={styles.spacer} />
+          <View style={styles.actionContainer}>
+            <PrimaryButton
+              onPress={() => {
+                setOpen(false);
+                navigation.navigate(route);
+              }}
+              buttonText={buttonText}
+            />
+            <View style={styles.spacer} />
+            <LinkButton
+              buttonText={'back to home'}
+              onPress={() => {
+                setOpen(false);
+                navigation.navigate('HomeScreen');
+              }}
             />
           </View>
         </View>
@@ -91,7 +137,6 @@ const styles = StyleSheet.create({
   },
   actionContainer: {
     padding: appConstants.spacing.space3,
-    width: 128,
   },
 });
 

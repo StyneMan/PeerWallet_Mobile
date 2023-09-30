@@ -26,6 +26,7 @@ export default function OTPScreen({navigation, route}: any) {
         buttonText="Log in"
         description="Your account has been successfully created."
         title="Registration Successful!"
+        route="Login"
       />
       <ScrollView>
         <View style={styles.content}>

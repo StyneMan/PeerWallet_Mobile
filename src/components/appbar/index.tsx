@@ -2,6 +2,8 @@ import React from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import appConstants from '../../utils/constants/constants';
 import MyAvatar from '../avatar';
+import {IconButton} from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface AppbarProps {
   title?: string | null;
@@ -50,7 +52,7 @@ export default function MyAppBar({
     text: {
       fontSize: 24,
       fontWeight: '500',
-      color: 'white',
+      color: titleColor,
     },
   });
 
@@ -65,7 +67,7 @@ export default function MyAppBar({
             />
           </TouchableOpacity>
         ) : (
-          leading
+          <View />
         )}
         {/* {actions} */}
       </View>

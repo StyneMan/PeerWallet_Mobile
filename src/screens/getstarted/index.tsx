@@ -7,7 +7,7 @@ import SecondaryButton from '../../components/button/secondarybutton';
 import {Text2} from '../../components/text/';
 import Background from '../../components/background';
 
-export default function GetStarted({navigation}): React.JSX.Element {
+export default function GetStarted({navigation}: any): React.JSX.Element {
   return (
     <Background>
       <View style={styles.content}>
@@ -24,7 +24,7 @@ export default function GetStarted({navigation}): React.JSX.Element {
         <PrimaryButton
           buttonText="Login"
           onPress={() => {
-            navigation.navigate('Login');
+            navigation.navigate('Dashboard');
           }}
         />
         <View style={styles.spacerMini} />

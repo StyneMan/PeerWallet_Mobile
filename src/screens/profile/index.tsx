@@ -31,7 +31,11 @@ export default function MyProfile({navigation}: any) {
   const listItems: ListItem[] = [
     {title: 'Edit Profile', icon: 'person-outline', route: 'EditProfile'},
     {title: 'Verification', icon: 'shield-check-outline', route: ''},
-    {title: 'Recent Activities', icon: 'progress-clock', route: ''},
+    {
+      title: 'Recent Activities',
+      icon: 'progress-clock',
+      route: 'RecentActivities',
+    },
     {title: 'Settings', icon: 'gear', route: 'Settings'},
     {title: 'Support', icon: 'support-agent', route: ''},
   ];

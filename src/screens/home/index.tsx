@@ -135,13 +135,6 @@ export default function HomeScreen() {
             titleColor="white"
             hasAvatar={true}
             onPress={() => {
-              // console.log('CHECKing IT :::: ');
-              // toast.show('Copie', {
-              //   type: 'normal ',
-              //   placement: 'center',
-              //   duration: 4000,
-              //   animationType: 'zoom-in',
-              // });
               navigation.navigate('Account', {screen: 'MyProfile'});
             }}
             leading={<View />}
@@ -177,14 +170,14 @@ export default function HomeScreen() {
                   <CustomButton
                     color={appConstants.color.successColor}
                     title="Add Funds"
-                    onPress={() => {}}
+                    onPress={() => navigation.navigate('AddFunds')}
                     icon={require('../../assets/images/fund_icon.png')}
                   />
                   <View style={{width: 16}} />
                   <CustomButton
                     color={appConstants.color.infoColor}
                     title="Transfer "
-                    onPress={() => {}}
+                    onPress={() => navigation.navigate('TransferFunds')}
                     icon={require('../../assets/images/transfer_icon.png')}
                   />
                 </View>

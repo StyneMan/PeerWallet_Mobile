@@ -17,6 +17,11 @@ import PinSettings from '../../screens/settings/pinsettings';
 import PinSetup from '../../screens/settings/pin/pinsetup';
 import ConfirmPin from '../../screens/settings/pin/confirmpin';
 import ChangePin from '../../screens/settings/pin/changepin';
+import AddFunds from '../../screens/funds/addfunds';
+import TransferFunds from '../../screens/funds/transferfunds';
+import ConfirmTransfer from '../../screens/funds/confirmtransfer';
+import TransferReceipt from '../../screens/funds/receipt';
+import RecentActivities from '../../screens/profile/recentactivities';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -28,11 +33,10 @@ function Home() {
   return (
     <HomeStack.Navigator screenOptions={{headerShown: false}}>
       <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
-      {/* <HomeStack.Screen
-        name="Account"
-        component={MyProfile}
-        options={{headerShown: false}}
-      /> */}
+      <HomeStack.Screen name="AddFunds" component={AddFunds} />
+      <HomeStack.Screen name="TransferFunds" component={TransferFunds} />
+      <HomeStack.Screen name="ConfirmTransfer" component={ConfirmTransfer} />
+      <HomeStack.Screen name="TransferReceipt" component={TransferReceipt} />
     </HomeStack.Navigator>
   );
 }
@@ -68,6 +72,10 @@ function Account() {
       initialRouteName="MyProfile">
       <AccountStack.Screen name="MyProfile" component={MyProfile} />
       <AccountStack.Screen name="Settings" component={Settings} />
+      <AccountStack.Screen
+        name="RecentActivities"
+        component={RecentActivities}
+      />
       <AccountStack.Screen name="EditProfile" component={EditProfile} />
       <AccountStack.Screen name="PinSettings" component={PinSettings} />
       <AccountStack.Screen name="PinSetup" component={PinSetup} />

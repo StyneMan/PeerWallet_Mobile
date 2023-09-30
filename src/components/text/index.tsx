@@ -55,12 +55,12 @@ export function Body2({color, text}: TextProps): React.JSX.Element {
 
 const styles = StyleSheet.create({
   root1: {
-    fontSize: 38,
+    fontSize: 40,
     fontWeight: '700',
     fontFamily: 'Inter-Regular',
   },
   root2: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: '700',
     fontFamily: 'Inter-Regular',
   },
@@ -81,12 +81,14 @@ const styles = StyleSheet.create({
   },
   root6: {
     fontSize: 12,
-    fontWeight: '300',
+    fontWeight: '400',
     fontFamily: 'Inter-Regular',
+    paddingVertical: 1,
   },
   body1: {
-    fontSize: 11,
-    fontWeight: '400',
+    fontSize: 12,
+    fontWeight: '300',
+    paddingVertical: 1,
     fontFamily: 'Inter-Regular',
   },
   body2: {
